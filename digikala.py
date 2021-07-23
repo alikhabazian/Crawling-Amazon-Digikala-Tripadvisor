@@ -116,3 +116,12 @@ def digikala_comment_getter(link,number_page):
     except ValueError:
         print(ValueError)
 
+def file_reader_to_get_comments(filename):
+    file1 = open(filename, 'r')
+    Lines = file1.readlines()
+    count = 0
+    # Strips the newline character
+    for line in Lines:
+        count += 1
+        print("Link{}: {}".format(count, line.strip()))
+        digikala_comment_getter(line.strip())
